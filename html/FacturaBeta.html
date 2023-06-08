@@ -131,13 +131,36 @@
                 <input type="number">
             </div>
             <div class="vTotal">
-                <input type="number">
+                <input type="number" disabled>
             </div>
             <div class="add">
-                <button onclick="ponerFila()">+</button>
+                <button onclick="calcularTotal(this)">+</button>
             </div>
         </div>
-
+        <div id="filaSubtotal">
+            <div>
+                SUBTOTAL:
+            </div>
+            <div id="subtotal">
+                <input type="number">
+            </div>
+        </div>
+        <div id="filaIVA">
+            <div>
+                IVA 12%:
+            </div>
+            <div id="iva">
+                <input type="number">
+            </div>
+        </div>
+        <div id="filaTotal">
+            <div>
+                TOTAL:
+            </div>
+            <div id="total">
+                <input type="number">
+            </div>
+        </div>
     </div>
 
 

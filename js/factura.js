@@ -1,5 +1,8 @@
 
 let cont = 0;
+let subtotal = 0;
+let valorIva = 0;
+let valorFinal = 0;
 
 function calculateTotal() {
 
@@ -35,52 +38,54 @@ function calculateTotal() {
   console.log(cont);
 }
 
-// function calculateTotals() {
-//   var rows = document.querySelectorAll("#miTabla tbody tr");
 
-//   var subtotal = 0;
-//   var iva = 0;
-//   var total = 0;
+function calcularTotal(button) {
 
-//   rows.forEach(function (row) {
-//     var cantidad = parseFloat(row.querySelector(".cant input").value);
-//     var vUnitario = parseFloat(row.querySelector(".vUnitario input").value);
-//     var vTotal = cantidad * vUnitario;
-//     row.querySelector(".vTotal input").value = vTotal.toFixed(2);
-//     subtotal += vTotal;
-//   });
+  var fila = button.closest(".fila");
+  var cantidad = parseFloat(fila.querySelector(".cant input").value);
+  var valorUnitario = parseFloat(fila.querySelector(".vUnitario input").value);
+  var valorTotal = cantidad * valorUnitario;
 
-//   iva = subtotal * 0.12;
-//   total = subtotal + iva;
+  subtotal += valorTotal;
+  console.log("Subtotal: " + subtotal);
 
-//   document.getElementById("subtotal").value = subtotal.toFixed(2);
-//   document.getElementById("iva").value = iva.toFixed(2);
-//   document.getElementById("total").value = total.toFixed(2);
-// }
+  let inputSubtotal = document.querySelector("#subtotal input");
+  inputSubtotal.value = subtotal;
 
-// function addRow() {
-//   var tbody = document.querySelector("#miTabla tbody");
-//   var newRow = document.createElement("tr");
-//   newRow.innerHTML = `
-//     <td class="cant"><input type="number"></td>
-//     <td class="detalle"><input type="text"></td>
-//     <td class="vUnitario"><input type="number"></td>
-//     <td class="vTotal"><input type="number" disabled></td>
-//     <td class="add"><button onclick="calculateTotals()">+</button></td>
-//   `;
-//   tbody.appendChild(newRow);
-// }
+  fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);
+
+  ponerFila();
+  calcularIva();
+  calcularTotalFinal();
+}
 
 function ponerFila() {
-
-  let tabla = document.getElementById("tabla");
 
   let nuevaFila = document.createElement("div");
   nuevaFila.className = "fila";
 
+  var filaExistente = document.querySelector(".fila");
+  filaExistente.parentNode.insertBefore(nuevaFila, filaExistente);
+  nuevaFila.innerHTML = filaExistente.innerHTML;
+
   let contenidoFila = document.querySelector(".fila").innerHTML;
   nuevaFila.innerHTML = contenidoFila;
-  tabla.appendChild(nuevaFila);
+
+  let filaPrevia = document.getElementById("filaSubtotal");
+  tabla.insertBefore(nuevaFila, filaPrevia);
+}
+
+function calcularIva() {
 
 
+  valorIva = subtotal * 0.12;
+  let inputIva = document.querySelector("#iva input");
+  inputIva.value = valorIva;
+}
+
+function calcularTotalFinal() {
+
+  valorFinal = subtotal + valorIva;
+  let inputFinal = document.querySelector("#total input");
+  inputFinal.value = valorFinal;
 }
