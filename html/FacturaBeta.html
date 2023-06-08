@@ -61,8 +61,7 @@
         </div>
 
     </section>
-    <table id="miTabla">
-
+    <!-- <table id="miTabla">
         <thead>
             <tr>
                 <th class="cant">Cantidad</th>
@@ -71,7 +70,6 @@
                 <th>V. Total</th>
                 <th></th>
             </tr>
-
         </thead>
         <tbody>
             <tr>
@@ -81,29 +79,68 @@
                 <td class="vTotal"><input type="number" disabled></td>
                 <td class="add"><button onclick="calculateTotal()">+</button></td>
             </tr>
-            <!-- 
-            <tr class="lastRow">
-                <td colspan="3">
-                    <p class="parr1">MULTIGRAFIC JP JESUS OSWALDO PEDRA MOYA RUC</p>
-                    <p class="parr2">Telf: 2361 683 IMPRESO 09 / ENERO / 2023 DEL 0000001 AL 0000050</p>
-                    <p class="parr3">CADUCA 09 /ENERO / 2024</p>
-                </td>
-                <td rowspan="2">
-                    <div class="total">TOTAL $</div>
-                    <div>Original:</div>
-                    <div>Copia:</div>
-                </td>
+            <tr>
+                <td colspan="3" class="invisible"></td>
                 <td>
-                    <div class="total"></div>
-                    <div>Cliente</div>
-                    <div>Emisor</div>
+                    <p>Subtotal:</p>
                 </td>
-
-            </tr> -->
-
+                <td><input id="subtotal" type="number" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="invisible"></td>
+                <td>
+                    <p>IVA 12%:</p>
+                </td>
+                <td><input id="iva" type="number" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="invisible"></td>
+                <td>
+                    <p>TOTAL:</p>
+                </td>
+                <td><input id="total" type="number" readonly></td>
+            </tr>
         </tbody>
+    </table> -->
 
-    </table>
+    <div id="tabla">
+
+        <div id="primeraFila">
+
+            <div class="cant">
+                Cantidad
+            </div>
+            <div class="detalle">
+                Detalle
+            </div>
+            <div class="vUnitario">
+                V. Unitario
+            </div>
+            <div class="vTotal">
+                V. Total
+            </div>
+        </div>
+        <div class="fila">
+            <div class="cant">
+                <input type="number">
+            </div>
+            <div class="detalle">
+                <input type="text">
+            </div>
+            <div class="vUnitario">
+                <input type="number">
+            </div>
+            <div class="vTotal">
+                <input type="number">
+            </div>
+            <div class="add">
+                <button onclick="ponerFila()">+</button>
+            </div>
+        </div>
+
+    </div>
+
+
 
     <footer>
 
