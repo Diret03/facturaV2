@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Diego Recalde, Juan Ulcuango, Jordan Puruncajas">
+    <link rel="stylesheet" href="../styles/CSSFactura.css">
+
+    <title>Facturacion</title>
+</head>
+
+<body>
+    <header class="encabezado">
+
+        <img src="../img/logo.png" alt="Logo Empresa">
+        <div class="txtLogo">
+            <p>alquiler</p>
+            <p>carpas, sillas, mesas</p>
+            <p>mantelería</p>
+        </div>
+
+        <div class="notaVenta">
+            <p>R.U.C 1720136728001</p>
+            <p>NOTA DE VENTA <span>SERIE 001-001</span></p>
+            <p>000000014</p>
+        </div>
+    </header>
+
+    <section id="datosEmpresa">
+
+        <div class="nombre">
+            <p>ULCUANGO ANDRIMBA NORA KARINA</p>
+            <p>AUT. SRI. 1130897982</p>
+        </div>
+        <div class="telf">
+            <p>(02) 2111291</p>
+            <p>0999 266 345</p>
+        </div>
+        <div class="direccion">
+            <p>Cabo Jacome Milton Casa 2 Y Calle C</p>
+        </div>
+        <div class="email">
+            <p>E-mail: karina_dami@hotmail.com</p>
+            <p>Cayambe - Ecuador</p>
+            <p>*CONTRIBUYENTE NEGOCIO POPULAR - REGIMEN RIMPE*</p>
+        </div>
+
+    </section>
+
+    <section id="datos">
+        <p class="cliente">Cliente:_____________________________________________</p>
+        <p class="cliente">RUC:______________</p>
+        <p>Dirección:________________________________________________________________</p>
+        <p class="fecha">Fecha:___________________________________</p>
+        <p class="fecha">Teléfono:______________________</p>
+        <div class="lastLine">
+            <p>Garantía:_________________________________</p>
+            <p class="pago">Forma de Pago:________________</p>
+        </div>
+
+    </section>
+    <table id="miTabla">
+
+        <thead>
+            <tr>
+                <th class="cant">Cantidad</th>
+                <th class="detalle">Detalle</th>
+                <th>V. Unitario</th>
+                <th>V. Total</th>
+                <th></th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td class="cant"><input type="number"></td>
+                <td class="detalle"><input type="text"></td>
+                <td class="vUnitario"><input type="number"></td>
+                <td class="vTotal"><input type="number" disabled></td>
+                <td class="add"><button onclick="calculateTotal()">+</button></td>
+            </tr>
+            <!-- 
+            <tr class="lastRow">
+                <td colspan="3">
+                    <p class="parr1">MULTIGRAFIC JP JESUS OSWALDO PEDRA MOYA RUC</p>
+                    <p class="parr2">Telf: 2361 683 IMPRESO 09 / ENERO / 2023 DEL 0000001 AL 0000050</p>
+                    <p class="parr3">CADUCA 09 /ENERO / 2024</p>
+                </td>
+                <td rowspan="2">
+                    <div class="total">TOTAL $</div>
+                    <div>Original:</div>
+                    <div>Copia:</div>
+                </td>
+                <td>
+                    <div class="total"></div>
+                    <div>Cliente</div>
+                    <div>Emisor</div>
+                </td>
+
+            </tr> -->
+
+        </tbody>
+
+    </table>
+
+    <footer>
+
+        <div>
+            <p class="nova">Nova Eventos</p>
+        </div>
+        <div>
+            <p>Firma Cliente</p>
+        </div>
+
+    </footer>
+    <script src="../js/factura.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+body {
+    background-color: #caf0f8;
+    color: darkblue;
+    font-family: sans-serif;
+
+}
+
+header {
+
+    display: flex;
+
+}
+
+header img {
+    width: 180px;
+    background-color: lightblue;
+    margin-right: 10px;
+}
+
+header div.txtLogo {
+
+    padding-top: 25px;
+}
+
+
+header div.txtLogo p {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-style: oblique;
+}
+
+header div.notaVenta p {
+    text-align: center;
+}
+
+header div.notaVenta {
+    padding-top: 25px;
+    position: absolute;
+    left: 440px;
+}
+
+header div.notaVenta p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+header div.notaVenta p:last-child {
+    font-weight: bold;
+    color: red;
+    letter-spacing: 0.25em;
+    margin-top: 8px;
+    font-family: tahoma;
+}
+
+header div.notaVenta p span {
+
+    font-size: 0.90em;
+}
+
+#datosEmpresa div p {
+    font-size: 13px;
+}
+
+#datosEmpresa,
+#datosEmpresa div.telf {
+    margin-top: 10px;
+}
+
+#datosEmpresa div.nombre p,
+#datosEmpresa div.telf p {
+    display: inline;
+}
+
+#datosEmpresa div.nombre p:first-child {
+    font-family: bold;
+}
+
+#datosEmpresa div.nombre p:last-child {
+    position: relative;
+    left: 220px;
+}
+
+#datosEmpresa div.telf p:first-child {
+    margin-right: 50px;
+}
+
+#datosEmpresa div.direccion p {
+    margin-top: 5px;
+    margin-bottom: 3px;
+
+}
+
+#datosEmpresa div.email p {
+    margin-top: 0;
+    display: inline;
+}
+
+#datosEmpresa div.email p:first-child {
+    margin-right: 10px;
+}
+
+#datosEmpresa div.email p:last-child {
+    font-size: 0.75em;
+    margin-left: 15px;
+    letter-spacing: -0.1em;
+}
+
+#datos p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#datos {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#datos p.cliente,
+#datos p.fecha {
+
+    display: inline;
+}
+
+#datos p:last-child {
+    margin-right: 0;
+}
+
+#datos p.cliente+p.cliente,
+#datos p.fecha+p.fecha {
+
+    margin-left: 10px;
+}
+
+#datos div.lastLine {
+    margin-top: 7px;
+}
+
+#datos div.lastLine p {
+
+    display: inline;
+    margin-right: 10px;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+
+table td,
+table th {
+    border: solid darkblue;
+    height: 15px;
+    width: 80px;
+    font-size: 0.90em;
+}
+
+table th {
+    font-weight: normal;
+}
+
+
+table th.detalle,
+table td.detalle {
+    width: 275px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.lastRow td:first-child p {
+
+
+    text-align: center;
+    font-size: small;
+
+}
+
+.lastRow td:first-child p.parr1 {
+
+    margin-bottom: 0;
+}
+
+.lastRow td:first-child p.parr2 {
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.lastRow td:first-child p.parr3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.lastRow td div.total {
+    height: 20px;
+    border-bottom: solid;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+footer div {
+    display: inline-block;
+    /* border: solid; */
+    width: 240px;
+    margin-left: 40px;
+}
+
+footer div p {
+    text-align: center;
+    border-top: solid;
+    margin-top: 40px;
+}
+
+footer div p.nova {
+    font-weight: 800;
+    font-family: bold;
+    font-style: oblique;
+}
