@@ -5,6 +5,7 @@ body {
 
 }
 
+
 header {
 
     display: flex;
@@ -143,71 +144,6 @@ header div.notaVenta p span {
     margin-right: 10px;
 }
 
-table {
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-
-table td,
-table th {
-    border: solid darkblue;
-    height: 15px;
-    width: 80px;
-    font-size: 0.90em;
-}
-
-table th {
-    font-weight: normal;
-}
-
-
-table th.detalle,
-table td.detalle {
-    width: 275px;
-    text-align: left;
-    padding-left: 10px;
-}
-
-/* .lastRow td:first-child p {
-
-
-    text-align: center;
-    font-size: small;
-
-}
-
-.lastRow td:first-child p.parr1 {
-
-    margin-bottom: 0;
-}
-
-.lastRow td:first-child p.parr2 {
-
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.lastRow td:first-child p.parr3 {
-    margin-top: 0;
-    margin-bottom: 0;
-} */
-
-/* .lastRow td div.total {
-    height: 20px;
-    border-bottom: solid;
-    padding-left: 0;
-    padding-right: 0;
-} */
-
-td.invisible {
-
-    border: none;
-}
-
-td footer {
-    margin-top: 50px;
-}
 
 footer div {
     display: inline-block;
@@ -229,21 +165,31 @@ footer div p.nova {
 }
 
 #tabla {
-    width: 60%;
+
     margin: 30px 0;
 }
 
 #primeraFila>div,
 .fila>div,
-#filaSubtotal>div,
-#filaIVA>div,
-#filaTotal>div {
+.ultimaFila>div {
     border: solid;
     display: inline-block;
-    width: 10%;
-    margin-right: 0;
+    width: 85px;
+    padding: 0 4px;
+
 }
 
+.fila div,
+.ultimaFila div {
+
+    border-top: none;
+}
+
+
+.ultimaFila div.detalle,
+.ultimaFila div.cant {
+    border-bottom: none;
+}
 
 .fila .add {
     width: 3%;
@@ -255,15 +201,15 @@ footer div p.nova {
 } */
 
 #tabla .detalle {
-    width: 350px;
+    width: 23%;
 }
 
 .detalle input[type="text"] {
-    width: 290px;
+    width: 100%;
 }
 
 input[type="number"] {
-    width: 90%;
+    width: 100%;
 }
 
 input[type="text"],
