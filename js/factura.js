@@ -1,10 +1,11 @@
 
-let cont = 0;
+let cont = 0;  //atributo no usado
+
 let subtotal = 0;
 let valorIva = 0;
 let valorFinal = 0;
 
-function calculateTotal() {
+function calculateTotal() {  //metodo descartado
 
   var table = document.getElementById("miTabla");
   var tbody = table.getElementsByTagName("tbody")[0];
@@ -31,9 +32,6 @@ function calculateTotal() {
     <td class="add"><button onclick="calculateTotal()">+</button></td>
   `;
   tbody.appendChild(nuevaFila);
-  // tbody.insertRow(nuevaFila);
-  // tbody.append(nuevaFila);
-  // tbody.insertBefore(nuevaFila, ultimaFila);
   cont++;
   console.log(cont);
 }
@@ -46,13 +44,13 @@ function calcularTotal(button) {
   var valorUnitario = parseFloat(fila.querySelector(".vUnitario input").value);
   var valorTotal = cantidad * valorUnitario;
 
-  subtotal += valorTotal;
+  subtotal += valorTotal;               //se suma y asigna el valor actual del producto a la variable global de subtotal
   console.log("Subtotal: " + subtotal);
 
   let inputSubtotal = document.querySelector("#subtotal input");
   inputSubtotal.value = subtotal;
 
-  fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);
+  fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);  //se redondea a dos decimales el valor obtenido
 
   ponerFila();
   calcularIva();
