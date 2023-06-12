@@ -9,7 +9,7 @@ function calcularTotal(button) {
   let inputCantidad = fila.querySelector(".cant input").value;
   let inputUnitario = fila.querySelector(".vUnitario input").value;
 
-  if (inputCantidad !== "" && inputCantidad !== "") {
+  if (inputCantidad !== "" && inputUnitario !== "") {
 
     let cantidad = parseFloat(inputCantidad);
     let valorUnitario = parseFloat(inputUnitario);
@@ -19,14 +19,17 @@ function calcularTotal(button) {
     console.log("Subtotal: " + subtotal);
 
     let inputSubtotal = document.querySelector("#subtotal input");
-    inputSubtotal.value = subtotal;
+    inputSubtotal.value = subtotal.toFixed(2);
 
     fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);  //se redondea a dos decimales el valor obtenido
-
 
     ponerFila();
     calcularIva();
     calcularTotalFinal();
+
+  }
+  else {
+    alert("Complete los campos correctamente");
   }
 
 }
@@ -37,14 +40,16 @@ function ponerFila() {
   nuevaFila.className = "fila";
 
   var filaExistente = document.querySelector(".fila");
-  filaExistente.parentNode.insertBefore(nuevaFila, filaExistente);
+  // filaExistente.parentNode.insertBefore(nuevaFila, filaExistente);
   nuevaFila.innerHTML = filaExistente.innerHTML;
 
   let contenidoFila = document.querySelector(".fila").innerHTML;
   nuevaFila.innerHTML = contenidoFila;
 
+  let tabla = document.getElementById("tabla");
   let filaPrevia = document.getElementById("filaSubtotal");
   tabla.insertBefore(nuevaFila, filaPrevia);
+
 }
 
 function calcularIva() {

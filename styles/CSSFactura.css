@@ -212,15 +212,15 @@ input[type="number"] {
     width: 100%;
 }
 
-input[type="text"],
-input[type="number"] {
+#tabla input[type="text"],
+#tabla input[type="number"] {
     background-color: inherit;
     border: none;
     cursor: pointer;
 }
 
-input[type="number"]:hover,
-input[type="text"]:hover {
+#tabla input[type="number"]:hover,
+#tabla input[type="text"]:hover {
     background-color: #ade8f4;
 }
 
