@@ -49,19 +49,33 @@
 
     </section>
 
-    <section id="datos">
-        <p class="cliente">Cliente:_____________________________________________</p>
-        <p class="cliente">RUC:______________</p>
-        <p>Dirección:________________________________________________________________</p>
-        <p class="fecha">Fecha:___________________________________</p>
-        <p class="fecha">Teléfono:______________________</p>
-        <div class="lastLine">
-            <p>Garantía:_________________________________</p>
-            <p class="pago">Forma de Pago:________________</p>
-        </div>
+    <form action="" method="get">
+        <section id="datos">
+            <div id="fila1">
+                <label for="cliente">Cliente:</label>
+                <input type="text" name="cliente" id="cliente">
+                <label for="ruc">RUC:</label>
+                <input type="number" name="ruc" id="ruc">
+            </div>
+            <div id="fila2">
+                <label for="direc">Dirección:</label>
+                <input type="text" name="direc" id="direc">
+            </div>
+            <div id="fila3">
+                <label for="fecha">Fecha:</label>
+                <input type="date" name="fecha" id="fecha">
+                <label for="telf">Teléfono:</label>
+                <input type="number" name="telf" id="telf">
+            </div>
+            <div id="fila4">
+                <label for="garantia">Garantía:</label>
+                <input type="text" name="garantia" id="garantia">
+                <label for="fPago">Forma de Pago:</label>
+                <input type="text" name="fPago" id="fPago">
+            </div>
 
-    </section>
-    <!-- <table id="miTabla">
+        </section>
+        <!-- <table id="miTabla">
         <thead>
             <tr>
                 <th class="cant">Cantidad</th>
@@ -103,96 +117,97 @@
         </tbody>
     </table> -->
 
-    <div id="tabla">
+        <div id="tabla">
 
-        <div id="primeraFila">
+            <div id="primeraFila">
 
-            <div class="cant">
-                Cantidad
+                <div class="cant">
+                    Cantidad
+                </div>
+                <div class="detalle">
+                    Detalle
+                </div>
+                <div class="vUnitario">
+                    V. Unitario
+                </div>
+                <div class="vTotal">
+                    V. Total
+                </div>
             </div>
-            <div class="detalle">
-                Detalle
+            <div class="fila">
+                <div class="cant">
+                    <input type="number">
+                </div>
+                <div class="detalle">
+                    <input type="text">
+                </div>
+                <div class="vUnitario">
+                    <input type="number">
+                </div>
+                <div class="vTotal">
+                    <input type="number" disabled>
+                </div>
+                <div class="add">
+                    <button onclick="calcularTotal(this)">+</button>
+                </div>
             </div>
-            <div class="vUnitario">
-                V. Unitario
+            <div id="filaSubtotal" class="ultimaFila">
+                <div class="cant">
+
+                </div>
+                <div class="detalle">
+
+                </div>
+                <div>
+                    SUBTOTAL:
+                </div>
+                <div id="subtotal">
+                    <input type="number">
+                </div>
             </div>
-            <div class="vTotal">
-                V. Total
+            <div id="filaIVA" class="ultimaFila">
+                <div class="cant">
+
+                </div>
+                <div class="detalle">
+
+                </div>
+                <div>
+                    IVA 12%:
+                </div>
+                <div id="iva">
+                    <input type="number">
+                </div>
+            </div>
+            <div id="filaTotal" class="ultimaFila">
+                <div class="cant">
+
+                </div>
+                <div class="detalle">
+
+                </div>
+                <div>
+                    TOTAL:
+                </div>
+                <div id="total">
+                    <input type="number">
+                </div>
             </div>
         </div>
-        <div class="fila">
-            <div class="cant">
-                <input type="number">
-            </div>
-            <div class="detalle">
-                <input type="text">
-            </div>
-            <div class="vUnitario">
-                <input type="number">
-            </div>
-            <div class="vTotal">
-                <input type="number" disabled>
-            </div>
-            <div class="add">
-                <button onclick="calcularTotal(this)">+</button>
-            </div>
-        </div>
-        <div id="filaSubtotal" class="ultimaFila">
-            <div class="cant">
 
-            </div>
-            <div class="detalle">
 
+
+        <footer>
+
+            <div>
+                <p class="nova">Nova Eventos</p>
             </div>
             <div>
-                SUBTOTAL:
+                <p>Firma Cliente</p>
             </div>
-            <div id="subtotal">
-                <input type="number">
-            </div>
-        </div>
-        <div id="filaIVA" class="ultimaFila">
-            <div class="cant">
 
-            </div>
-            <div class="detalle">
-
-            </div>
-            <div>
-                IVA 12%:
-            </div>
-            <div id="iva">
-                <input type="number">
-            </div>
-        </div>
-        <div id="filaTotal" class="ultimaFila">
-            <div class="cant">
-
-            </div>
-            <div class="detalle">
-
-            </div>
-            <div>
-                TOTAL:
-            </div>
-            <div id="total">
-                <input type="number">
-            </div>
-        </div>
-    </div>
-
-
-
-    <footer>
-
-        <div>
-            <p class="nova">Nova Eventos</p>
-        </div>
-        <div>
-            <p>Firma Cliente</p>
-        </div>
-
-    </footer>
+        </footer>
+    </form>
     <script src="../js/factura.js"></script>
 </body>
 

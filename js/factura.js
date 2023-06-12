@@ -12,20 +12,27 @@ function calcularTotal(button) {
   if (inputCantidad !== "" && inputUnitario !== "") {
 
     let cantidad = parseFloat(inputCantidad);
-    let valorUnitario = parseFloat(inputUnitario);
-    let valorTotal = cantidad * valorUnitario;
 
-    subtotal += valorTotal;               //se suma y asigna el valor actual del producto a la variable global de subtotal
-    console.log("Subtotal: " + subtotal);
+    if (cantidad > 0) {
+      let valorUnitario = parseFloat(inputUnitario);
+      let valorTotal = cantidad * valorUnitario;
 
-    let inputSubtotal = document.querySelector("#subtotal input");
-    inputSubtotal.value = subtotal.toFixed(2);
+      subtotal += valorTotal;               //se suma y asigna el valor actual del producto a la variable global de subtotal
+      console.log("Subtotal: " + subtotal);
 
-    fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);  //se redondea a dos decimales el valor obtenido
+      let inputSubtotal = document.querySelector("#subtotal input");
+      inputSubtotal.value = subtotal.toFixed(2);
 
-    ponerFila();
-    calcularIva();
-    calcularTotalFinal();
+      fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);  //se redondea a dos decimales el valor obtenido
+
+      ponerFila();
+      calcularIva();
+      calcularTotalFinal();
+
+      button.parentNode.removeChild(button);
+    }
+    else alert("Se necesita al menos 1 producto");
+
 
   }
   else {
@@ -39,16 +46,34 @@ function ponerFila() {
   let nuevaFila = document.createElement("div");
   nuevaFila.className = "fila";
 
-  var filaExistente = document.querySelector(".fila");
-  // filaExistente.parentNode.insertBefore(nuevaFila, filaExistente);
-  nuevaFila.innerHTML = filaExistente.innerHTML;
-
-  let contenidoFila = document.querySelector(".fila").innerHTML;
-  nuevaFila.innerHTML = contenidoFila;
+  // var filaExistente = document.querySelector(".fila");
+  // nuevaFila.innerHTML = filaExistente.innerHTML;
+  nuevaFila.innerHTML = `
+  <div class="cant">
+  <input type="number">
+</div>
+<div class="detalle">
+  <input type="text">
+</div>
+<div class="vUnitario">
+  <input type="number">
+</div>
+<div class="vTotal">
+  <input type="number" disabled>
+</div>
+<div class="add">
+  <button onclick="calcularTotal(this)">+</button>
+</div>
+  `;
 
   let tabla = document.getElementById("tabla");
   let filaPrevia = document.getElementById("filaSubtotal");
   tabla.insertBefore(nuevaFila, filaPrevia);
+
+
+
+
+
 
 }
 

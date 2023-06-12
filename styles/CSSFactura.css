@@ -108,40 +108,28 @@ header div.notaVenta p span {
     letter-spacing: -0.1em;
 }
 
-#datos p {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 #datos {
-    margin-top: 7px;
-    margin-bottom: 7px;
+
+    margin-top: 20px;
 }
 
-#datos p.cliente,
-#datos p.fecha {
-
-    display: inline;
+#datos div {
+    margin: 5px 0;
 }
 
-#datos p:last-child {
-    margin-right: 0;
+#datos input[type="text"],
+#datos input[type="number"],
+#datos input[type="date"] {
+    border: none;
+    border-bottom: 1px solid darkblue;
+    background-color: inherit;
 }
 
-#datos p.cliente+p.cliente,
-#datos p.fecha+p.fecha {
+#fila3 label,
+#fila3 input {
 
-    margin-left: 10px;
-}
-
-#datos div.lastLine {
-    margin-top: 7px;
-}
-
-#datos div.lastLine p {
-
-    display: inline;
-    margin-right: 10px;
+    display: inline-block;
+    margin: auto;
 }
 
 
@@ -169,12 +157,39 @@ footer div p.nova {
     margin: 30px 0;
 }
 
+#tabla input {
+    border: none;
+    background-color: inherit;
+}
+
+#ruc,
+#telf,
+#fPago {
+    width: 9%;
+}
+
+#cliente {
+    width: 24%;
+}
+
+#garantia {
+    width: 22.5%;
+}
+
+#fecha {
+    width: 24.5%;
+}
+
+#direc {
+    width: 39%;
+}
+
 #primeraFila>div,
 .fila>div,
 .ultimaFila>div {
     border: solid;
     display: inline-block;
-    width: 85px;
+    width: 6%;
     padding: 0 4px;
 
 }
