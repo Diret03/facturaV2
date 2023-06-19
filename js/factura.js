@@ -1,7 +1,7 @@
 
 let subtotal = 0;
-let valorIva = 0;
-let valorFinal = 0;
+
+
 
 function calcularTotal(button) {
 
@@ -9,12 +9,12 @@ function calcularTotal(button) {
   let inputCantidad = fila.querySelector(".cant input").value;
   let inputUnitario = fila.querySelector(".vUnitario input").value;
 
-  if (inputCantidad !== "" && inputUnitario !== "") {
+  if (inputCantidad !== null && inputUnitario !== null) {
 
-    let cantidad = parseFloat(inputCantidad);
+    let cantidad = inputCantidad;
 
     if (cantidad > 0) {
-      let valorUnitario = parseFloat(inputUnitario);
+      let valorUnitario = inputUnitario;
       let valorTotal = cantidad * valorUnitario;
 
       subtotal += valorTotal;               //se suma y asigna el valor actual del producto a la variable global de subtotal
@@ -26,12 +26,11 @@ function calcularTotal(button) {
       fila.querySelector(".vTotal input").value = valorTotal.toFixed(2);  //se redondea a dos decimales el valor obtenido
 
       ponerFila();
-      calcularIva();
       calcularTotalFinal();
 
       button.parentNode.removeChild(button);
     }
-    else alert("Se necesita al menos 1 producto");
+    else alert("La cantidad debe ser mayor a cero");
 
 
   }
@@ -81,13 +80,17 @@ function calcularIva() {
 
 
   valorIva = subtotal * 0.12;
-  let inputIva = document.querySelector("#iva input");
+  let inputIva = document.getElementById("#iva input");
   inputIva.value = valorIva.toFixed(2);
 }
 
 function calcularTotalFinal() {
 
-  valorFinal = subtotal + valorIva;
-  let inputFinal = document.querySelector("#total input");
+  let valorIva = subtotal * 0.12;
+  let inputIva = document.getElementById("inputIVA");
+  inputIva.value = valorIva.toFixed(2);
+
+  let valorFinal = subtotal + valorIva;
+  let inputFinal = document.getElementById("inputTotalFinal");
   inputFinal.value = valorFinal.toFixed(2);
 }
