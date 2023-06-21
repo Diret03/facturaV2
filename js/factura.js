@@ -1,6 +1,61 @@
 
 let subtotal = 0;
 
+//variables bases de datos
+var db;
+var cajadatos;
+const dbName = "Facturacion";
+
+const listaProduct = [];
+const objDetalle = { cod: 0, desc: "", cant: 0, precio: 0, subtotal: 0 };
+
+function iniciar() {
+  cajadatos = document.getElementById("cajadatos");
+  // var botgrabar = document.getElementById("grabar");
+  // botgrabar.addEventListener("click", agregarobjeto);
+
+  var solicitud = indexedDB.open(dbName);
+  solicitud.addEventListener("success", comenzar);
+  solicitud.onerror = (event) => {
+    // Handle errors.
+    console.error(`Database error: ${event.target.errorCode}`);
+  };
+
+  solicitud.onupgradeneeded = (event) => {
+    const bd = event.target.result;
+
+    var objectStore = bd.createObjectStore("detalle_venta", { keyPath: "ruc_ci" });
+
+    objectStore.createIndex("descripcion", "descripcion", { unique: false });
+
+    objectStore.createIndex("cantidad", "cantidad", { unique: false });
+
+    objectStore.createIndex("precio", "precio", { unique: false });
+
+    objectStore.createIndex("subtotal", "subtotal", { unique: false });
+
+  };
+}
+
+function comenzar(evento) {
+  db = evento.target.result;
+};
+
+function agregarobjeto() {
+  var transaccion = db.transaction(["detalle_venta"], "readwrite");
+  var almacen = transaccion.objectStore("detalle_venta");
+
+  if (listaProduct == null) {
+    listaProduct.add(objDetalle);
+  }
+  listaProduct.forEach((detalle) => {
+    detalle.cod = "1";
+    almacen.add(detalle);
+    cajadatos.innerHTML += "<div>" + detalle.cod + " - " +
+      detalle.desc + " - " + detalle.cant + " - " + detalle.precio + " - " + detalle.subtotal + "</div>";
+  });
+
+};
 
 
 function calcularTotal(button) {
@@ -8,6 +63,11 @@ function calcularTotal(button) {
   let fila = button.closest(".fila");
   let inputCantidad = fila.querySelector(".cant input").value;
   let inputUnitario = fila.querySelector(".vUnitario input").value;
+  let inputDetalle = fila.querySelector(".detalle input").value;
+  objDetalle.cod = 1;
+  objDetalle.desc = inputDetalle;
+  objDetalle.precio = inputUnitario;
+
 
   if (inputCantidad !== null && inputUnitario !== null) {
 
@@ -28,6 +88,8 @@ function calcularTotal(button) {
       ponerFila();
       calcularTotalFinal();
 
+      objDetalle.subtotal = subtotal;
+
       button.parentNode.removeChild(button);
     }
     else alert("La cantidad debe ser mayor a cero");
@@ -38,6 +100,7 @@ function calcularTotal(button) {
     alert("Complete los campos correctamente");
   }
 
+  agregarobjeto();
 }
 
 function ponerFila() {
@@ -71,9 +134,6 @@ function ponerFila() {
 
 
 
-
-
-
 }
 
 function calcularIva() {
@@ -94,3 +154,5 @@ function calcularTotalFinal() {
   let inputFinal = document.getElementById("inputTotalFinal");
   inputFinal.value = valorFinal.toFixed(2);
 }
+
+window.addEventListener("load", iniciar); 

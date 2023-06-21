@@ -248,3 +248,10 @@ button:hover {
     background-color: #90e0ef;
     cursor: pointer;
 }
+
+#cajadatos {
+    float: left;
+    width: 400px;
+    border: solid;
+    background-color: yellow;
+}
