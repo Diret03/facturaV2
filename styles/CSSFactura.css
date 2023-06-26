@@ -189,7 +189,7 @@ footer div p.nova {
 .ultimaFila>div {
     border: solid;
     display: inline-block;
-    width: 6%;
+    width: 4.5%;
     padding: 0 4px;
 
 }
@@ -247,6 +247,10 @@ button {
 button:hover {
     background-color: #90e0ef;
     cursor: pointer;
+}
+
+#tabla div.codAux {
+    border-bottom: none;
 }
 
 #cajadatos {
