@@ -185,7 +185,7 @@ footer div p.nova {
 }
 
 #primeraFila>div,
-.fila>div,
+#fila>div,
 .ultimaFila>div {
     border: solid;
     display: inline-block;
@@ -194,7 +194,7 @@ footer div p.nova {
 
 }
 
-.fila div,
+#fila div,
 .ultimaFila div {
 
     border-top: none;
@@ -206,10 +206,10 @@ footer div p.nova {
     border-bottom: none;
 }
 
-.fila .add {
+/* #fila .add {
     width: 3%;
     border: none;
-}
+} */
 
 /* .fila div>input {
     width: ;

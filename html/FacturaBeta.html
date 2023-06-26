@@ -134,22 +134,25 @@
                     V. Total
                 </div>
             </div>
-            <div class="fila">
+            <div id="fila">
+                <div class="cod">
+                    <input type="number" id="cod">
+                </div>
                 <div class="cant">
-                    <input type="number">
+                    <input type="number" id="cant">
                 </div>
                 <div class="detalle">
-                    <input type="text">
+                    <input type="text" id="detalle">
                 </div>
                 <div class="vUnitario">
-                    <input type="number">
+                    <input type="number" id="vUnitario">
                 </div>
                 <div class="vTotal">
-                    <input type="number" disabled>
+                    <input type="number" disabled id="vTotal">
                 </div>
-                <div class="add">
-                    <button onclick="calcularTotal(this)" id="grabar">+</button>
-                </div>
+                <!-- <div class="add">
+                    <button onclick="calcularTotal()">+</button>
+                </div> -->
             </div>
             <div id="filaSubtotal" class="ultimaFila">
                 <div class="cant">
@@ -196,6 +199,9 @@
         </div>
 
         <section id="cajadatos">
+
+            <button id="baseDatos">Ver Base de datos</button>
+
             <!-- 
             <button id="grabar">Grabar</button> -->
         </section>
