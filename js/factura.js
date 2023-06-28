@@ -12,9 +12,9 @@ function iniciar() {
   // botgrabar.addEventListener("click", agregarobjeto);
 
   var solicitud = window.indexedDB.open(dbName);
-  solicitud.addEventListener("error", mostrarError);
-  solicitud.addEventListener("success", comenzar);
-  solicitud.addEventListener("upgradeneeded", crearbd);
+  solicitud.addEventListener("onerror", mostrarError);
+  solicitud.addEventListener("onsuccess", comenzar);
+  solicitud.addEventListener("onupgradeneeded", crearbd);
 
   var botBoton = document.getElementById("baseDatos");
   botBoton.addEventListener("click", agregarobjeto);
