@@ -75,47 +75,6 @@
             </div>
 
         </section>
-        <!-- <table id="miTabla">
-        <thead>
-            <tr>
-                <th class="cant">Cantidad</th>
-                <th class="detalle">Detalle</th>
-                <th>V. Unitario</th>
-                <th>V. Total</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="cant"><input type="number"></td>
-                <td class="detalle"><input type="text"></td>
-                <td class="vUnitario"><input type="number"></td>
-                <td class="vTotal"><input type="number" disabled></td>
-                <td class="add"><button onclick="calculateTotal()">+</button></td>
-            </tr>
-            <tr>
-                <td colspan="3" class="invisible"></td>
-                <td>
-                    <p>Subtotal:</p>
-                </td>
-                <td><input id="subtotal" type="number" readonly></td>
-            </tr>
-            <tr>
-                <td colspan="3" class="invisible"></td>
-                <td>
-                    <p>IVA 12%:</p>
-                </td>
-                <td><input id="iva" type="number" readonly></td>
-            </tr>
-            <tr>
-                <td colspan="3" class="invisible"></td>
-                <td>
-                    <p>TOTAL:</p>
-                </td>
-                <td><input id="total" type="number" readonly></td>
-            </tr>
-        </tbody>
-    </table> -->
 
         <div id="tabla">
 
@@ -154,7 +113,7 @@
                     <input type="number" disabled id="vTotal">
                 </div>
                 <div class="add">
-                    <button onclick="calcularTotal()">+</button>
+                    <button onclick="agregarProducto()">+</button>
                 </div>
             </div>
             <div id="filaSubtotal" class="ultimaFila">
@@ -212,28 +171,28 @@
                 </div>
             </div>
         </div>
-
-        <section id="cajadatos">
-
-            <button id="baseDatos">Ver Base de datos</button>
-
-            <!-- 
-            <button id="grabar">Grabar</button> -->
-        </section>
-
-
-        <footer>
-
-            <div>
-                <p class="nova">Nova Eventos</p>
-            </div>
-            <div>
-                <p>Firma Cliente</p>
-            </div>
-
-        </footer>
     </form>
+    <section id="cajadatos">
+
+    </section>
+
+    <button id="mostrar" onclick="mostrarProductos()">Ver Base de datos</button>
+    <button id="vaciar" onclick="vaciarBaseDatos()">Vaciar Base de datos</button>
+    <button id="buscar" onclick="buscarProducto()">Buscar:</button>
+    <input type="number" id="valorBuscar">
+
+    <footer>
+
+        <div>
+            <p class="nova">Nova Eventos</p>
+        </div>
+        <div>
+            <p>Firma Cliente</p>
+        </div>
+
+    </footer>
     <script src="../js/factura2.js"></script>
+
 </body>
 
 </html>
